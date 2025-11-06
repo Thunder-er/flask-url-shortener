@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
+
+    <h2>My CS50 URL Shortener</h2>
+
+    <form method="POST" action="/">
+        <label for="url">Enter a long URL to shorten:</label>
+        <br><br>
+        <input type="url" name="url" id="url" size="50" required>
+        <input type="submit" value="Shorten!">
+    </form>
+
+    {% if short_url %}
+        <br>
+        <h3>Your short URL is ready:</h3>
+        <p>
+            <a href="{{ request.host_url }}{{ short_url }}">
+                {{ request.host_url }}{{ short_url }}
+            </a>
+        </p>
+    {% endif %}
+
+</body>
+</html>
